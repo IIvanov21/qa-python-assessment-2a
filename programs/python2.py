@@ -204,9 +204,16 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(string, num):
-    return ''
+    lenght=len(string)
+    middle=lenght//2
+    if lenght==num:return ""
+    elif num>1:
+        chars=string[middle-1:middle+num-1]
+        string=string.replace(chars,"")
+    else : string=string[:middle] + string[middle+1:]
+    return string
 
-eight("Chocolate", 1)
+
 
     # <QUESTION 9>
 
