@@ -30,7 +30,11 @@
     # How does a for loop iterate through a string?
 
 def one(string):
-    return ""
+    newString=''
+    for char in string:
+        for i in range (3):
+            newString+=char
+    return newString
 
     # <QUESTION 2>
 
@@ -48,7 +52,11 @@ def one(string):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(num):
-    return False
+    if num <= 2: return True
+    elif num % 2 == 0:
+        return False
+    else:
+        return True
 
     # <QUESTION 3>
 
@@ -65,7 +73,12 @@ def two(num):
     # What happens if you multiply a string by a number?
 
 def three(a):
-    return 1
+    sum = 0
+    a2=int(2*str(a))
+    a3=int(3*str(a))
+    a4=int(4*str(a))
+    sum = a+a2+a3+a4
+    return sum
 
     # <QUESTION 4>
 
@@ -94,7 +107,14 @@ def three(a):
     # How would you seperate a string into characters?
 
 def four(string1, string2):
-    return ""
+    newString=''
+    string1=list(string1)
+    string2=list(string2)
+    for i in range(len(string1)):
+        newString+=string1[i]
+        newString+=string2[i]
+    return newString
+
 
     # <QUESTION 5>
 
@@ -109,9 +129,12 @@ def four(string1, string2):
     # <HINT>
     # There is a module which can be used to generate random numbers, this module is called random.
     # The random module contains a function called randint.
-
+from random import randrange
 def five():
-    return []
+    nums=[]
+    for i in range(5):
+        nums.append(randrange(100,200,2))
+    return nums
 
     # <QUESTION 6>
 
@@ -130,7 +153,10 @@ def five():
     # There are no hints for this question.
     
 def six(string):
-    return False
+    if string.endswith('py') or string.endswith('pY') or string.endswith('Py') or string.endswith('PY'):
+        return True
+    else:
+        return False
 
     # <QUESTION 7>
 
@@ -154,8 +180,14 @@ def six(string):
     # Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-    return False
-
+    numList=[a,b,c]
+    numList.sort()
+    num1=numList[1]-numList[0]
+    num2=numList[2]-numList[1]
+    if num1==num2:
+        return True
+    else:
+        return False
     # <QUESTION 8>
 
     # Given a string and an integer, n, return a string that removes n letters from the 'middle' of the string.
@@ -172,7 +204,9 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(string, num):
-    return ""
+    return ''
+
+eight("Chocolate", 1)
 
     # <QUESTION 9>
 
@@ -189,7 +223,7 @@ def eight(string, num):
     # There are no hints for this question.
 
 def nine(string1, string2):
-    return False
+    string1
 
     # <QUESTION 10>
 
@@ -207,4 +241,5 @@ def nine(string1, string2):
     # Think about nesting for loops.
 
 def ten(a, b):
-    return []
+    array=[[i*j for j in range(a)]for i in range(b)]
+    return array
