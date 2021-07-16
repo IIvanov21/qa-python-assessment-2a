@@ -223,8 +223,17 @@ eight("Chocolate", 1)
     # There are no hints for this question.
 
 def nine(string1, string2):
-    string1
-
+    m=0
+    check1=True
+    for i in string2:
+        if i in string1: m+=1
+    if m==len(string2): return True
+    else: check1 = False
+    n=0
+    for i in string1:
+        if i in string2: n+=1
+    if n==len(string1): return True
+    else: return False
     # <QUESTION 10>
 
     # Write a function which takes 2 integers greater than 0, X,Y as input and generates a 2-dimensional array. 
